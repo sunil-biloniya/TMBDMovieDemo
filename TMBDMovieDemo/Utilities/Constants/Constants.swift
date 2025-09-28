@@ -28,6 +28,11 @@ enum Constants {
         }
     }
    
+    // MARK: - Navigation
+    enum Navigation {
+        static let character = "Characters"
+        static let bookMark = "Bookmarked"
+    }
     
     // MARK: - Labels
     enum Labels {
@@ -41,6 +46,7 @@ enum Constants {
         static let errorMsg = "An unknown error occurred"
         static let error = "Error"
         static let ok = "OK"
+        
     }
     
     enum Images {

@@ -17,17 +17,22 @@ struct MainTabBarView: View {
     
     var body: some View {
         TabView {
-            HomeView(viewModel: makeHomeViewModel())
-                .tabItem {
-                    Label(Tab.home.title, systemImage: Tab.home.icon)
-                }
-            
-            BookMarkView(viewModel: makeBookmarkViewModel())
-                .tabItem {
-                    Label(Tab.bookmark.title, systemImage: Tab.bookmark.icon)
-                }
+            NavigationStack {
+                HomeView(viewModel: makeHomeViewModel())
+            }
+            .tabItem {
+                Label(Tab.home.title, systemImage: Tab.home.icon)
+            }
+
+            NavigationStack {
+                BookMarkView(viewModel: makeBookmarkViewModel())
+            }
+            .tabItem {
+                Label(Tab.bookmark.title, systemImage: Tab.bookmark.icon)
+            }
         }
     }
+
     
     private func configureTabBarAppearance() {
         let appearance = UITabBarAppearance()

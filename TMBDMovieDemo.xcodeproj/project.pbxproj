@@ -17,7 +17,6 @@
 		10DB7B1F2DDCC22600EDC69C /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB7B1C2DDCC22600EDC69C /* MainTabBarView.swift */; };
 		10DB7B202DDCC22600EDC69C /* TMBDMovieDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB7B1D2DDCC22600EDC69C /* TMBDMovieDemoApp.swift */; };
 		10DB7B212DDCC22600EDC69C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10DB7B1B2DDCC22600EDC69C /* Assets.xcassets */; };
-		10DB7B2A2DDCCA6000EDC69C /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB7B292DDCCA6000EDC69C /* NavigationCoordinator.swift */; };
 		10DB7B2E2DDCCE1100EDC69C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB7B2D2DDCCE1100EDC69C /* HomeView.swift */; };
 		10DB7B312DDCD3E700EDC69C /* TredingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB7B302DDCD3E700EDC69C /* TredingCardView.swift */; };
 		10DB7B332DDCD4F900EDC69C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DB7B322DDCD4F900EDC69C /* NetworkError.swift */; };
@@ -58,7 +57,6 @@
 		10DB7B1B2DDCC22600EDC69C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10DB7B1C2DDCC22600EDC69C /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		10DB7B1D2DDCC22600EDC69C /* TMBDMovieDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBDMovieDemoApp.swift; sourceTree = "<group>"; };
-		10DB7B292DDCCA6000EDC69C /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		10DB7B2D2DDCCE1100EDC69C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		10DB7B302DDCD3E700EDC69C /* TredingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TredingCardView.swift; sourceTree = "<group>"; };
 		10DB7B322DDCD4F900EDC69C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				44244BDE2E88BC7700CBD9CA /* Utilities */,
 				792275DC2DE0549500D21CB3 /* Core */,
 				10DB7B3A2DDCD75C00EDC69C /* Configuration */,
-				10DB7B282DDCCA4E00EDC69C /* Navigation */,
 				10DB7B272DDCC2E100EDC69C /* NetworkManager */,
 				10DB7B222DDCC22B00EDC69C /* Feature */,
 				10DB7B1B2DDCC22600EDC69C /* Assets.xcassets */,
@@ -220,14 +217,6 @@
 				100B9D312DDDCD76007F52D7 /* RequestBody.swift */,
 			);
 			path = NetworkManager;
-			sourceTree = "<group>";
-		};
-		10DB7B282DDCCA4E00EDC69C /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				10DB7B292DDCCA6000EDC69C /* NavigationCoordinator.swift */,
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		10DB7B2B2DDCCDF800EDC69C /* View */ = {
@@ -480,7 +469,6 @@
 				10DB7B372DDCD59700EDC69C /* NetworkRequest.swift in Sources */,
 				10F6FC9C2DE325C300AFE4C6 /* ImageCache.swift in Sources */,
 				100B9D322DDDCD76007F52D7 /* RequestBody.swift in Sources */,
-				10DB7B2A2DDCCA6000EDC69C /* NavigationCoordinator.swift in Sources */,
 				10F6FCA02DE36DE600AFE4C6 /* BookMarkView.swift in Sources */,
 				10F6FC972DE31FA800AFE4C6 /* DetailsPage.swift in Sources */,
 				10DB7B332DDCD4F900EDC69C /* NetworkError.swift in Sources */,

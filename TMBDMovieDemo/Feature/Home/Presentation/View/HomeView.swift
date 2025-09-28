@@ -11,41 +11,45 @@ import SwiftData
 struct HomeView: View {
     @Environment(\.modelContext) var modelContext
     @Query var characters: [CResult]
-    
-    @EnvironmentObject var router: NavigationCoordinator
-    
     @StateObject var viewModel: HomeViewModel
     
     var body: some View {
-        ZStack {
-            Color(.white).ignoresSafeArea()
-            VStack {
-                SearchBar(text: $viewModel.searchText)
-                
-                if !filteredCharacters.isEmpty {
-                    List {
-                        ForEach(filteredCharacters, id: \.id) { character in
-                            CharacterCardView(character: character)
-                                .onTapGesture {
-                                    router.navigate(to: .movieDetail(character, viewModel))
-                                }
-                                .onAppear {
-                                    if character == characters.last {
-                                        viewModel.fetchIfNeeded(currentItem: character, fetchMore: true)
+        NavigationStack {
+            ZStack {
+                Color(.white).ignoresSafeArea()
+                VStack {
+                    SearchBar(text: $viewModel.searchText)
+                    
+                    if !filteredCharacters.isEmpty {
+                        ScrollView {
+                            LazyVStack(spacing: 16) {
+                                ForEach(filteredCharacters, id: \.id) { character in
+                                    NavigationLink(destination: DetailsPage(result: character, viewmodel: viewModel)) {
+                                        CharacterCardView(character: character)
+                                            .contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
+                                    .onAppear {
+                                        if character == characters.last {
+                                            viewModel.fetchIfNeeded(currentItem: character, fetchMore: true)
+                                        }
                                     }
                                 }
-                                .listRowSeparator(.hidden)
+                            }
+                            .padding()
                         }
+                    } else {
+                        EmptyStateView(
+                            message: Constants.Labels.charactersNoData,
+                            systemImage: Constants.Images.bookMarkSlashIcon
+                        )
                     }
-                    .listStyle(.plain)
-                } else {
-                    EmptyStateView(
-                        message: Constants.Labels.charactersNoData,
-                        systemImage: Constants.Images.bookMarkSlashIcon
-                    )
                 }
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(Constants.Navigation.character)
+        
         .alert(Constants.Labels.error, isPresented: $viewModel.showErrorAlert) {
             Button(Constants.Labels.ok) {
                 viewModel.dismissError()

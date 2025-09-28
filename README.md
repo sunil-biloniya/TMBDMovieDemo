@@ -33,9 +33,8 @@ The project follows Clean Architecture principles with the following layers:
 ## Setup Instructions
 
 1. Clone the repository
-2. Open `MovieExplorer.xcodeproj` in Xcode 15.0 or later
-3. Get your API key from [The Movie Database (TMDb)](https://www.themoviedb.org/documentation/api)
-4. Add your API key to the `Config.xcconfig` file
+2. Open `MovieExplorer.xcodeproj` in Xcode 17.0 or later
+3. TMBDMovieDemo api for data from api (https://rickandmortyapi.com/api)
 5. Build and run the project
 
 ## Running Tests
@@ -49,7 +48,7 @@ The project follows Clean Architecture principles with the following layers:
 ```
 MovieExplorer/
 ├── App/
-│   └── MovieExplorerApp.swift
+│   └── TMBDMovieDemo.swift
 ├── NetworkManager/
 │   └── Reachability.swift
 │   ├── NetworkService

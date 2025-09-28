@@ -9,18 +9,10 @@ import SwiftUI
 import SwiftData
 
 @main
-struct TMBDMovieDemoApp: App {
-    @ObservedObject private var navigationCoordinator = NavigationCoordinator()
-    
+struct TMBDMovieDemoApp: App {    
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $navigationCoordinator.path) {
-                MainTabBarView()
-                    .navigationDestination(for: NavigationCoordinator.AuthFlow.self) { destinationPath in
-                        navigationCoordinator.destination(for: destinationPath)
-                    }
-            }
-            .environmentObject(navigationCoordinator)
+            MainTabBarView()
         }
         .modelContainer(for: CharacterModel.self)
     }

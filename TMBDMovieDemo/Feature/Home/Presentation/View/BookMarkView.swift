@@ -33,6 +33,7 @@ struct BookMarkView: View {
                     )
                 }
             }
+            .navigationTitle(Constants.Navigation.bookMark)
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 bookmarkedCharacters = characters.filter { $0.isBookmarked }
