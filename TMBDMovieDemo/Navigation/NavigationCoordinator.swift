@@ -1,10 +1,3 @@
-//
-//  NavigationCoordinator.swift
-//  TMBDMovieDemo
-//
-//  Created by sunil biloniya on 28/09/25.
-//
-
 import Foundation
 import SwiftUI
 
@@ -16,13 +9,13 @@ final class NavigationCoordinator: ObservableObject {
         path.append(router)
     }
     
-    func nvaigateBack() {
+    func navigateBack() { // Fixed typo
         path.removeLast()
     }
+    
     func navigateToRoot() {
         path.removeLast(path.count)
     }
-    
     
     enum AuthFlow: Hashable {
         case movieDetail(CResult, HomeViewModel)
@@ -30,10 +23,8 @@ final class NavigationCoordinator: ObservableObject {
 }
 
 extension NavigationCoordinator {
-    @discardableResult
-    @ViewBuilder
+    @ViewBuilder // Removed @discardableResult as it's not needed here
     func destination(for flow: AuthFlow) -> some View {
-        
         switch flow {
         case .movieDetail(let result, let viewmodel):
             DetailsPage(result: result, viewmodel: viewmodel)
@@ -41,13 +32,12 @@ extension NavigationCoordinator {
     }
 }
 
-
 extension HomeViewModel: Hashable {
-    static func == (lhs: HomeViewModel, rhs: HomeViewModel) -> Bool {
+    nonisolated static func == (lhs: HomeViewModel, rhs: HomeViewModel) -> Bool {
         lhs === rhs
     }
 
-    func hash(into hasher: inout Hasher) {
+    nonisolated func hash(into hasher: inout Hasher) {
         hasher.combine(ObjectIdentifier(self))
     }
 }

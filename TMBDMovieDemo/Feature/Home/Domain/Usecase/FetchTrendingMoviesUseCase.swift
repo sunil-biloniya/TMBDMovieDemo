@@ -25,7 +25,7 @@ class FetchTrendingMoviesUseCaseImpl: FetchTrendingMoviesUseCase {
         repository.fethCharacter(page: page)
     }
     
-    func saveCharacter(_ character: CharacterModel) {
-        repository.saveCharacter(character: character)
+    func saveCharacter(_ character: CharacterModel) async {
+        await repository.saveCharacter(character: character)
     }
 }

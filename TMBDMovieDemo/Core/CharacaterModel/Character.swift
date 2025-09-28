@@ -10,7 +10,7 @@ import SwiftData
 
 // MARK: - CharacterModel
 
-
+@MainActor
 @Model
 final class CharacterModel: Codable {
     @Attribute(.unique) var id = UUID().uuidString

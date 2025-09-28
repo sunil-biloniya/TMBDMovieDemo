@@ -11,7 +11,7 @@ import SwiftData
 
 protocol HomeRespository {
     func fethCharacter(page: Int) -> AnyPublisher<CharacterModel, Error>
-    func saveCharacter(character: CharacterModel)
+    func saveCharacter(character: CharacterModel) async
 }
 
 class HomeRespositoryImpl: HomeRespository {
@@ -34,7 +34,7 @@ class HomeRespositoryImpl: HomeRespository {
     }
     
 
-    func saveCharacter(character: CharacterModel) {
+    @MainActor func saveCharacter(character: CharacterModel) {
         guard let results = character.results else { return }
         
         for result in results {
