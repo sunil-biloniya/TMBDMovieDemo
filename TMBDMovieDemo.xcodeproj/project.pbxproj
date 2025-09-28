@@ -78,11 +78,21 @@
 		446B9F072E88AA9D00D48B91 /* TMBDMovieDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMBDMovieDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		44244C6A2E88D13300CBD9CA /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 446B9F062E88AA9D00D48B91 /* TMBDMovieDemoTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		446B9EEA2E88802600D48B91 /* Modifier */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Modifier; sourceTree = "<group>"; };
 		446B9EF12E88817100D48B91 /* Constants */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Constants; sourceTree = "<group>"; };
 		446B9EF42E8888BE00D48B91 /* Usecase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Usecase; sourceTree = "<group>"; };
-		446B9F082E88AA9E00D48B91 /* TMBDMovieDemoTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TMBDMovieDemoTests; sourceTree = "<group>"; };
+		446B9F082E88AA9E00D48B91 /* TMBDMovieDemoTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (44244C6A2E88D13300CBD9CA /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TMBDMovieDemoTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -699,6 +709,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TMBDMovieDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TMBDMovieDemoTests;
@@ -721,6 +732,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TMBDMovieDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TMBDMovieDemoTests;
