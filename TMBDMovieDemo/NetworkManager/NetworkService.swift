@@ -51,6 +51,7 @@ final class NetworkService: NetworkServiceProtocol {
                 if let networkError = error as? NetworkError {
                     return networkError
                 } else if let decodingError = error as? DecodingError {
+                    print("❌ DecodingError: \(decodingError)")
                     return NetworkError.decodingError(decodingError)
                 } else {
                     return NetworkError.requestFailed(error)

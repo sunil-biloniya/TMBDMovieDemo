@@ -54,7 +54,7 @@ private extension CharacterCardView {
     
     var statusSpeciesSection: some View {
         HStack(spacing: 4) {
-            Text(character.status?.rawValue ?? "")
+            Text(character.status ?? "")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundColor(.accentColor)
             
@@ -62,14 +62,14 @@ private extension CharacterCardView {
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
-            Text(character.species?.rawValue ?? "")
+            Text(character.species ?? "")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundColor(.secondary)
         }
     }
     
     var genderSection: some View {
-        Text("\(Constants.Labels.gender)\(character.gender?.rawValue ?? "\(Constants.Labels.unknown)")")
+        Text("\(Constants.Labels.gender)\(character.gender ?? "\(Constants.Labels.unknown)")")
             .font(.system(.footnote, design: .rounded))
             .foregroundColor(.secondary)
     }

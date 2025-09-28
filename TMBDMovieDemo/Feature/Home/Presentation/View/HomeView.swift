@@ -73,9 +73,9 @@ struct HomeView: View {
         } else {
             return characters.filter {
                 $0.name?.localizedCaseInsensitiveContains(viewModel.searchText) ?? false ||
-                $0.gender?.rawValue.localizedCaseInsensitiveContains(viewModel.searchText) ?? false ||
-                $0.species?.rawValue.localizedCaseInsensitiveContains(viewModel.searchText) ?? false ||
-                $0.status?.rawValue.localizedCaseInsensitiveContains(viewModel.searchText) ?? false
+                $0.gender?.localizedCaseInsensitiveContains(viewModel.searchText) ?? false ||
+                $0.species?.localizedCaseInsensitiveContains(viewModel.searchText) ?? false ||
+                $0.status?.localizedCaseInsensitiveContains(viewModel.searchText) ?? false
             }
         }
     }

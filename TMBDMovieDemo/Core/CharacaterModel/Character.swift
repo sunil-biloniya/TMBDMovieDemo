@@ -83,10 +83,10 @@ final class CResult: Codable {
     
     @Attribute(.unique)  var id: Int?
     var name: String?
-    var status: Status?
-    var species: Species?
+    var status: String?
+    var species: String?
     var type: String?
-    var gender: Gender?
+    var gender: String?
     var origin: Location?
     var location: Location?
     var image: String?
@@ -95,7 +95,7 @@ final class CResult: Codable {
     var created: String?
     var isBookmarked: Bool = false
 
-    init(id: Int, name: String, status: Status, species: Species, type: String, gender: Gender, origin: Location, location: Location, image: String, episode: [String], url: String, created: String, isBookmarked: Bool = false) {
+    init(id: Int, name: String, status: String, species: String, type: String, gender: String, origin: Location, location: Location, image: String, episode: [String], url: String, created: String, isBookmarked: Bool = false) {
         self.id = id
         self.name = name
         self.status = status
@@ -119,10 +119,10 @@ final class CResult: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
-        self.status = try container.decode(Status.self, forKey: .status)
-        self.species = try container.decodeIfPresent(Species.self, forKey: .species)
+        self.status = try container.decode(String.self, forKey: .status)
+        self.species = try container.decodeIfPresent(String.self, forKey: .species)
         self.type = try container.decode(String.self, forKey: .type)
-        self.gender = try container.decode(Gender.self, forKey: .gender)
+        self.gender = try container.decode(String.self, forKey: .gender)
         self.origin = try container.decode(Location.self, forKey: .origin)
         self.location = try container.decode(Location.self, forKey: .location)
         self.image = try container.decode(String.self, forKey: .image)
@@ -175,28 +175,4 @@ final class Location: Codable {
         try container.encode(name, forKey: .name)
         try container.encode(url, forKey: .url)
     }
-}
-
-// MARK: - Enums
-
-enum Gender: String, Codable {
-    case female = "Female"
-    case male = "Male"
-    case unknown = "unknown"
-}
-
-enum Species: String, Codable {
-    case human = "Human"
-    case alien = "Alien"
-    case unknown = "unknown"
-    case humanoid = "Humanoid"
-    case poopybutthole = "Poopybutthole"
-    case mythologicalCreature = "Mythological Creature"
-    case animal = "Animal"
-}
-
-enum Status: String, Codable {
-    case alive = "Alive"
-    case dead = "Dead"
-    case unknown = "unknown"
 }
